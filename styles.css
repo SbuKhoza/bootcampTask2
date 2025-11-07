@@ -1,0 +1,291 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center; 
+  background-color: #f5f5f5; 
+  padding: 1rem;
+  
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+}
+
+nav ul {
+  display: flex; 
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+/* hover color */
+nav a:hover {
+  color: #c00; 
+}
+
+
+.banner {
+  display: flex;
+  width: 100%;
+  height: 90vh;
+  justify-content: center;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  object-fit:cover;
+}
+
+.about {
+  width: 100%;
+  text-align: center;
+  padding: 4rem 0;
+  background-color: #fafafa;
+}
+
+#aboutHeader {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+#aboutParagraph {
+  width: 60%;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #444;
+  font-size: 1.05rem;
+}
+
+.contact {
+  width: 100%;
+  text-align: center;
+  background-color: #ffffff;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+#contactHeader {
+  font-size: 2rem;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
+#descrpt {
+  display: block;
+  color: #986666;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact form {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.contact label {
+  width: 90%;
+  text-align: left;
+  color: black;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 0.80rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+
+.contact textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact button {
+  width: fit-content;
+  align-self: center;
+  background-color: rgb(2, 152, 59);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Mobile screens styling */
+@media (max-width: 1024px) {
+  #aboutParagraph,
+  .contact form {
+    width: 80%;
+  }
+
+  #aboutHeader, 
+  #contactHeader {
+    font-size: 1.8rem;
+  }
+
+  #descrpt {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .menu-toggle {
+    display: flex;
+    flex-direction: row-reverse;
+    z-index: 1001;
+    /* position: fixed; */
+  }
+
+  nav {
+    position: relative; 
+    flex-direction: column;
+    padding: 0.2rem;
+  }
+
+  nav ul {
+    display: none;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(245, 245, 245, 0.98);
+    gap: 2rem;
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+
+  nav ul.active {
+    display: flex; 
+  }
+
+  .banner {
+    height: 70vh;
+  }
+
+  .about {
+    margin-top: 0;
+  }
+
+  #aboutParagraph {
+    width: 85%;
+    font-size: 1rem;
+  }
+
+  .contact form {
+    width: 85%;
+  }
+
+  .contact button {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    gap: 0.8rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .about {
+    width: 100%;
+  }
+
+  #aboutHeader,
+  #contactHeader {
+    font-size: 1.5rem;
+    align-self: center;
+  }
+
+  #aboutParagraph {
+    width: 80%;
+    text-align:justify
+  }
+  #descrpt {
+    width: 100%;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .banner {
+    height: 60vh;
+  }
+
+  .contact form {
+    justify-self: center;
+    width: 80%;
+    padding-right: 1rem;
+  }
+
+  .contact input {
+    width: 100%;
+  }
+  .contact textarea {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+  }
+
+  .contact button {
+    width: 80%;
+    /* padding: 0.9rem; */
+    font-size: 1rem;
+    align-self: center;
+  }
+}
+
+@media (max-width: 360px) {
+  #aboutHeader, #contactHeader {
+    font-size: 1.3rem;
+  }
+
+  #descrpt {
+    font-size: 1.1rem;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+  }
+
+  .banner {
+    height: 50vh;
+  }
+}
